@@ -224,28 +224,7 @@ int main(int argc, char *argv[])
 
                 t1 = P[0]->get_time();
                 p3 += t1 - t0;
-
-                // std::cout << "complete phase3" << std::endl;
             }
-            // printf("Phase 1 : %f(s) , %f(ms)\n", p1, p1 * 1000);
-
-            // printf("Phase 2 : %f(s) , %f(ms)\n", p2, p2 * 1000);
-
-            // printf("Phase 3 : %f(s) , %f(ms)\n", p3, p3 * 1000);
-
-            ofstream File;
-            string name = "../data/HJKY-" + to_string(t) + "-" + to_string(n) + "-" + to_string(lambda) + "-" + to_string(TESTCNT) + ".txt";
-
-            File.open(name);
-            File << "t = " << t << ", n = " << n << ", lambda = " << lambda << ", TESTCNT = " << TESTCNT << "\n";
-            File << "Phase 1 : " << p1 << "(s), " << p1 * 1000 << "(ms)"
-                 << "\n";
-            File << "Phase 2 : " << p2 << "(s), " << p2 * 1000 << "(ms)"
-                 << "\n";
-            File << "Phase 3 : " << p3 << "(s), " << p3 * 1000 << "(ms)"
-                 << "\n";
-
-            File.close();
         }
     }
 
