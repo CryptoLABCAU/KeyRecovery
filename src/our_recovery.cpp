@@ -101,8 +101,7 @@ int main(int argc, char *argv[])
                 }
                 t1 = P[0]->get_time();
                 p1 += t1 - t0;
-
-                // std::cout << "complete phase1" << std::endl;
+                
                 // phase 2
                 t0 = P[0]->get_time();
                 for (int i = 1; i < t + 1; i++)
@@ -147,8 +146,6 @@ int main(int argc, char *argv[])
                 t1 = P[0]->get_time();
                 p2 += t1 - t0;
 
-                // std::cout << "complete phase2" << std::endl;
-
                 // phase 3
                 t0 = P[0]->get_time();
                 for (int j = 1; j < t + 1; j++)
@@ -175,25 +172,10 @@ int main(int argc, char *argv[])
                 t1 = P[0]->get_time();
                 p3 += t1 - t0;
 
-                // std::cout << "complete phase3" << std::endl;
-
                 EC_POINT_free(cmp1);
                 EC_POINT_free(cmp2);
             }
 
-            ofstream File;
-            string name = "../data/our-" + to_string(t) + "-" + to_string(n) + "-" + to_string(lambda) + "-" + to_string(TESTCNT) + ".txt";
-
-            File.open(name);
-            File << "t = " << t << ", n = " << n << ", lambda = " << lambda << ", TESTCNT = " << TESTCNT << "\n";
-            File << "Phase 1 : " << p1 << "(s), " << p1 * 1000 << "(ms)"
-                 << "\n";
-            File << "Phase 2 : " << p2 << "(s), " << p2 * 1000 << "(ms)"
-                 << "\n";
-            File << "Phase 3 : " << p3 << "(s), " << p3 * 1000 << "(ms)"
-                 << "\n";
-
-            File.close();
         }
     }
 
