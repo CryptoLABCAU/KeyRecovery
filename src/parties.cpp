@@ -138,32 +138,6 @@ unsigned char *PARTIES::syncivgen(int i, int j, unsigned char *nounce)
     return iv;
 }
 
-// void PARTIES::saveFile()
-// {
-//     fstream fs;
-//     fs.open(outfile);
-
-//     fs << t << n << index << "\n";
-
-//     for (int i = 0; i < t + 1; i++)
-//     {
-//         char *buf = new char[256];
-
-//         memset(buf, 0x00, 256);
-//         strcpy(buf, BN_bn2hex(coeff[i]));
-
-//         fs << buf << "\n";
-//         delete[] buf;
-//     }
-
-//     fs.close();
-//     // output xi
-//     // output t n
-//     // output Xi
-//     // output coefficients
-//     // output index
-// }
-
 BIGNUM *PARTIES::L(int Q, int i, int x)
 {
     BIGNUM *res = BN_new();
